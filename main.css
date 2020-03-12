@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.timer {
+  position: relative;
+  background-color: #fffbff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.scramble {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.scramble-btn {
+  font-size: 1.5rem;
+  background-color: #30aadb;
+  border: none;
+  border-radius: 1.5rem;
+  color: #fffbff;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  transform: translate(0, -0.1rem);
+  margin: auto;
+}
+
+.time {
+  position: absolute;
+  top: 45%;
+  font-size: 5rem;
+  padding: 5%;
+}
+
+.timer-info {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar {
+  box-sizing: border-box;
+  width: 20%;
+  padding: 20px 0 0 20px;
+  font-size: 1.4rem;
+  background-color: #30aadb;
+  color: #fffbff;
+  overflow: auto;
+}
+
+.sidebar-info {
+  margin: 20px 0;
+}
+
+.closed-sidebar-q {
+  color: #fffbff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #30aadb;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 135%;
+}
+
+.saved-time {
+  animation-name: created;
+  animation-duration: 3s;
+}
+
+@keyframes created {
+  from {
+    background-color: #fffbff;
+  }
+
+  to {
+    background-color: #30aadb;
+  }
+}
+
+@media (max-width: 700px) {
+  * {
+    font-size: 1rem;
+  }
+
+  .scramble {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    font-size: 1.5rem;
+  }
+
+  .scramble-btn {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .time {
+    font-size: 3rem;
+  }
+
+  .sidebar {
+    padding: 5px 0 0 5px;
+  }
+
+  .closed-sidebar-q {
+    top: 20%;
+  }
+
+  .timer-info {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1400px) {
+  .scramble {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    font-size: 1.5rem;
+  }
+
+  .scramble-btn {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .time {
+    font-size: 4rem;
+  }
+
+  .sidebar {
+    padding: 10px 0 0 10px;
+  }
+
+  .closed-sidebar-q {
+    top: 20%;
+  }
+
+  .timer-info {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
