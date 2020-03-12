@@ -1,7 +1,3 @@
-/*
-  display: none is a css prop to temporarily remove the whole tag
-*/
-
 const app = () => {
 
   const container = document.querySelector('.container');
@@ -20,9 +16,9 @@ const app = () => {
   const interval = 27; // amount of time between incrementing the timer in miliseconds (ms), 1000ms = 1s
   let running = false; // false = paused, true = running
   let duration = 0; // time in miliseconds
-  let storeSetInterval; // to store setInterval function, in order to ber able to reset it
+  let storeSetInterval; // to store setInterval function, in order to be able to reset it
 
-  timeDisplay.textContent = '00:00:00'; // initial value
+  timeDisplay.textContent = '00:00:00'; // initial value of the timer
 
   const toggleStartStop = () => {
     if (running) {
@@ -34,7 +30,7 @@ const app = () => {
       let newTime = document.createElement("div");
       newTime.setAttribute("class", "saved-time");
       newTime.textContent = timeFormat(duration);
-      sidebarWindow.insertBefore(newTime, sidebarWindow.childNodes[5]);
+      sidebarWindow.insertBefore(newTime, sidebarWindow.childNodes[5]); // 5th node is the node before 'previous times'
 
       // check if a div .no-times exists
       let noTimesDiv = document.querySelector('.no-times');
@@ -56,7 +52,7 @@ const app = () => {
   };
 
   const resetTimer = () => {
-    // resetting timer
+    // reset timer
     running = false;
     duration = 0;
   };
@@ -66,15 +62,15 @@ const app = () => {
   }
 
   const toggleSidebar = () => {
-    if (sidebarWindow.style.display == 'none') {
-      sidebarWindow.style.display = 'block'; // initial value
+    if (sidebarWindow.style.display == 'none') { // if hidden
+      sidebarWindow.style.display = 'block'; // change to the initial value, make it visible
 
       // remove Q
       let q = document.querySelector('.closed-sidebar-q'); // created in the else case below
       q.parentNode.removeChild(q); // removes Q
 
     } else {
-      sidebarWindow.style.display = 'none';
+      sidebarWindow.style.display = 'none'; // don't display
 
       // leave a Q notifying of how to go reopen the sidebar
       let q = document.createElement('div');
@@ -134,7 +130,8 @@ const app = () => {
       outputText += ' ' + temp;
     }
 
-    scrambleText.textContent = outputText;
+    // now outputText contains a random move, like R2 for example
+    scrambleText.textContent = outputText; // display it
   };
 
   generateScramble();
