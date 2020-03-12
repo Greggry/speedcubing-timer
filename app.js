@@ -6,23 +6,23 @@ const app = () => {
 
   const container = document.querySelector('.container');
 
-  const timerDiv = document.querySelector('.timer');
+  const timerWindow = document.querySelector('.timer-window');
 
   // timer div objects
   const scrambleText = document.querySelector('.scramble-text');
   const scrambleButton = document.querySelector('.scramble-btn');
-  const time = document.querySelector('.time');
+  const timeDisplay = document.querySelector('.time-display');
   const timerInfo = document.querySelector('.timer-info');
 
   // sidebar
-  const sidebar = document.querySelector('.sidebar');
+  const sidebarWindow = document.querySelector('.sidebar-window');
 
   const interval = 27; // amount of time between incrementing the timer in miliseconds (ms), 1000ms = 1s
   let running = false; // false = paused, true = running
   let duration = 0; // time in miliseconds
   let storeSetInterval; // to store setInterval function, in order to ber able to reset it
 
-  time.textContent = '00:00:00'; // initial value
+  timeDisplay.textContent = '00:00:00'; // initial value
 
   const toggleStartStop = () => {
     if (running) {
@@ -34,7 +34,7 @@ const app = () => {
       let newTime = document.createElement("div");
       newTime.setAttribute("class", "saved-time");
       newTime.textContent = timeFormat(duration);
-      sidebar.insertBefore(newTime, sidebar.childNodes[5]);
+      sidebarWindow.insertBefore(newTime, sidebarWindow.childNodes[5]);
 
       // check if a div .no-times exists
       let noTimesDiv = document.querySelector('.no-times');
@@ -62,25 +62,25 @@ const app = () => {
   };
 
   const displayTime = () => {
-    time.textContent = timeFormat(duration);
+    timeDisplay.textContent = timeFormat(duration);
   }
 
   const toggleSidebar = () => {
-    if (sidebar.style.display == 'none') {
-      sidebar.style.display = 'block'; // initial value
+    if (sidebarWindow.style.display == 'none') {
+      sidebarWindow.style.display = 'block'; // initial value
 
       // remove Q
       let q = document.querySelector('.closed-sidebar-q'); // created in the else case below
       q.parentNode.removeChild(q); // removes Q
 
     } else {
-      sidebar.style.display = 'none';
+      sidebarWindow.style.display = 'none';
 
       // leave a Q notifying of how to go reopen the sidebar
       let q = document.createElement('div');
       q.setAttribute('class', 'closed-sidebar-q'); // properties from css file
       q.textContent = 'Q'; // it's empty without that.
-      timerDiv.appendChild(q); // integrate
+      timerWindow.appendChild(q); // integrate
     }
   };
 
@@ -164,7 +164,7 @@ const app = () => {
     }
   });
 
-  time.addEventListener('click', () => {
+  timeDisplay.addEventListener('click', () => {
     toggleStartStop();
   });
 

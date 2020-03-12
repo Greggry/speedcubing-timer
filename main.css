@@ -9,7 +9,7 @@
   display: flex;
 }
 
-.timer {
+.timer-window {
   position: relative;
   background-color: #fffbff;
   display: flex;
@@ -37,7 +37,7 @@
   margin: auto;
 }
 
-.time {
+.time-display {
   position: absolute;
   top: 45%;
   font-size: 5rem;
@@ -49,7 +49,7 @@
   margin-bottom: 1rem;
 }
 
-.sidebar {
+.sidebar-window {
   box-sizing: border-box;
   width: 20%;
   padding: 20px 0 0 20px;
@@ -108,11 +108,11 @@
     font-size: 1rem;
   }
 
-  .time {
+  .time-display {
     font-size: 3rem;
   }
 
-  .sidebar {
+  .sidebar-window {
     padding: 5px 0 0 5px;
   }
 
@@ -139,11 +139,11 @@
     font-size: 1rem;
   }
 
-  .time {
+  .time-display {
     font-size: 4rem;
   }
 
-  .sidebar {
+  .sidebar-window {
     padding: 10px 0 0 10px;
   }
 
